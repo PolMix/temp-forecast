@@ -16,7 +16,7 @@ def plot_dataset(heat_data, block_number):
     block_number: int
         Number of block to plot temperature time series for
     """
-    plt.figure(dpi=200)
+    plt.figure(dpi=120)
 
     plt.plot(np.arange(len(heat_data)), heat_data.loc[:,block_number])
 
@@ -42,7 +42,7 @@ def plot_smoothed_data(heat_data, heat_data_smoothed, block_number):
         Number of block to plot temperature time series for
     """
     clear_output()
-    plt.figure(figsize=(5, 5), dpi=150)
+    plt.figure(figsize=(5, 5), dpi=120)
 
     plt.plot(range(1, len(heat_data) + 1), heat_data.iloc[:, block_number], label='original', color='black')
 
@@ -71,7 +71,7 @@ def plot_train_val_data(heat_data, train_size, block_number):
         Number of block to plot temperature time series for
     """
     clear_output()
-    plt.figure(figsize=(5, 5), dpi=150)
+    plt.figure(figsize=(5, 5), dpi=120)
     plt.plot(range(1, int(len(heat_data) * train_size) + 1),
              heat_data.iloc[:int(len(heat_data) * train_size), block_number], label='train', color='black')
 
@@ -102,7 +102,7 @@ def plot_losses(train_losses, test_losses, names=None):
         Number of block to plot temperature time series for
     """
     clear_output()
-    plt.figure(figsize=(5, 5), dpi=150)
+    plt.figure(figsize=(5, 5), dpi=120)
 
     if names is None:
         plt.plot(range(1, len(train_losses) + 1), train_losses, label='train', color='black')
